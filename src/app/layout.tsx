@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     template: "%s | Cracking the Go Interview",
   },
   description:
-    "Master Go (Golang) interview questions with clear explanations, code examples, and deep-dives into goroutines, channels, interfaces, and more.",
-  keywords: ["Go", "Golang", "interview", "interview questions", "goroutines", "channels", "concurrency"],
+    "The definitive Go learning platform. Master interview questions, watch video tutorials, and build real projects in Go (Golang).",
+  keywords: ["Go", "Golang", "interview prep", "goroutines", "channels", "concurrency", "tutorials"],
   openGraph: {
     title: "Cracking the Go Interview",
-    description: "Master Go interview questions with clear explanations and code examples.",
+    description: "The definitive Go learning platform — questions, videos, and projects.",
     type: "website",
   },
 };
@@ -24,16 +24,25 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-white">
+      <body className="min-h-full flex flex-col" style={{ background: "var(--background)", color: "var(--foreground)" }}>
         <Navbar />
         <main className="flex-1">{children}</main>
-        <footer className="border-t border-zinc-200 dark:border-zinc-800 py-8 text-center text-sm text-zinc-500 dark:text-zinc-400">
-          <p>
-            Built for Go developers everywhere ·{" "}
-            <a href="https://go.dev" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 dark:hover:text-white transition-colors">
+        <footer className="border-t py-10 text-center text-sm" style={{ borderColor: "var(--border)", color: "var(--muted)" }}>
+          <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2 font-semibold" style={{ color: "var(--foreground)" }}>
+              <span>🐹</span>
+              <span>CrackingTheGoInterview</span>
+            </div>
+            <p>Built for Go developers everywhere</p>
+            <a
+              href="https://go.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
               go.dev ↗
             </a>
-          </p>
+          </div>
         </footer>
       </body>
     </html>
